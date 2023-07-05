@@ -10,4 +10,4 @@
         - epel-release 
         - htop
         - tmux
-        - vim-nox
+        - vim
