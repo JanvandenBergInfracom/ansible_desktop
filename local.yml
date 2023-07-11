@@ -15,8 +15,8 @@
 
   - name: copy wallpaper file
     copy:
-      src: files/AlmaLinux.png
-      dest: /usr/share/backgrounds/ansible-wallpaper.png
+      src: files/AlmaLinux.jpg
+      dest: /usr/share/backgrounds/ansible-wallpaper.jpg
       owner: root
       group: root
 
