@@ -12,6 +12,7 @@
         - tmux
         - vim
         - python3-psutil
+        - dconf-editor  
 
   - name: copy wallpaper file
     copy:
