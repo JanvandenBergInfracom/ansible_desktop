@@ -12,23 +12,23 @@
         - tmux
         - vim
         - python3-psutil
-        - dconf-editor  
+        - dconf-editor
 
   - name: copy wallpaper file
     copy:
-      src: files/AlmaLinux.jpg
-      dest: /usr/share/backgrounds/ansible-wallpaper.jpg
+      src: files/AlmaLinux.png
+      dest: /usr/share/backgrounds/ansible-wallpaper.png
       owner: root
       group: root
 
   - name: set wallpaper
     become_user: berg
-    dconf:
+    community.general.dconf:
       key: "/org/gnome/desktop/background/picture-uri"
-      value: "'file:///usr/share/backgrounds/ansible-wallpaper.jpg'"
+      value: "'file:///usr/share/backgrounds/ansible-wallpaper.png'"
 
   - name: set wallpaper position
     become_user: berg
-    dconf:
+    community.general.dconf:
       key: "/org/gnome/desktop/background/picture-options"
       value: "'zoom'"
