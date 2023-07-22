@@ -1,0 +1,12 @@
+---
+- connection: local
+  become: true
+  pre_tasks:
+
+  - name: install updates (AlmaLinux and Fedora)
+    dnf:
+      name: "*"
+      state: latest
+      update_only: yes
+      update_cache: yes
+
