@@ -4,10 +4,19 @@
   become: true
   pre_tasks:
 
+  - name: install updates (Ubuntu and Debian)
+    tags: always
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution in ["Ubuntu", "Debian"]
+
   - name: install updates (AlmaLinux and Fedora)
+    tags: always
     dnf:
       name: "*"
       state: latest
       update_only: yes
       update_cache: yes
+    when: ansible_distribution in ["AlmaLinux", "Fedora"]
 
